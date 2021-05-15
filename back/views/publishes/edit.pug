@@ -1,0 +1,56 @@
+extends ../layout.pug
+
+block content
+    h2 Editar un Post - #{publish.titulo}
+    form(action="/publishes/update", method="POST", novalidate)
+        .form-group.mb-4 
+            label.form-label Título
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el título",
+                name="titulo",
+                value=publish.titulo)
+        .form-group.mb-4
+            label.form-label Post
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el Post",
+                name="post",
+                value=publish.post)
+        .form-group.mb-4 
+            label.form-label Número
+            input.form-control(
+                type="number", 
+                placeholder="Introduce el número",
+                name="numero",
+                value=publish.numero)
+        .form-check.mb-4 
+            label.form-check-label Activo
+            input.form-check-input(
+                type="checkbox",
+                name="activo",
+                value=publish.activo)
+        input(type="hidden", name="id", value=publish._id)
+        input.btn.btn-block.btn-info(type="submit", value="Enviar")
+    script.
+        const publish = "#{publish.publish}";
+        const numero = "#{publish.numero}";
+        const activo = "#{publish.activo}";
+        
+        // Recorro las opciones de numero y selecciono la correcta
+        const options = document.querySelectorAll('.form-select option');
+        for(let option of options){
+            if(option.value === numero){
+                option.selected = true;
+            }
+        }
+
+        // Marcar o no el checkbox activo
+        const checkBox = document.querySelector('.form-check-input');
+        if(activo === 'true'){
+            checkBox.checked = true;
+        }else{
+            checkBox.checked = false;
+        }
+
+        

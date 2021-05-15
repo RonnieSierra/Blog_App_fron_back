@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content
+    h2 Crear un nuevo Post
+    form(action="/publishes/create", method="POST", novalidate)
+        .form-group.mb-4 
+            label.form-label Título
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el titulo",
+                name="titulo")
+        .form-group.mb-4
+            label.form-label Post
+            input.form-control(
+                type="text", 
+                placeholder="Introduce el Post",
+                name="post")
+        .form-group.mb-4 
+            label.form-label Número
+            input.form-control(
+                type="number", 
+                placeholder="Introduce el número",
+                name="numero")
+        .form-check.mb-4 
+            label.form-check-label Activo
+            input.form-check-input(
+                type="checkbox",
+                name="activo")
+        input.btn.btn-block.btn-info(type="submit", value="Enviar")

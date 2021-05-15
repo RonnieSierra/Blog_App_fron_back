@@ -1,0 +1,22 @@
+extends ../layout.pug
+
+block content
+    h2 Listado de Posts
+    table.table
+        thead
+            tr
+                th Título
+                th Post
+                th Número
+                th Activo
+                th Acciones
+        tbody
+            each publish in publishes
+                tr
+                    td= publish.titulo
+                    td= publish.post
+                    td #{publish.numero}
+                    td= publish.activo ? 'SÍ' : 'NO'
+                    td.col
+                        a.btn.btn-sm.btn-danger.btn-lg.btn-block(href="/publishs/delete/"+publish._id, onclick="return confirm('¿Estás seguro?')") Eliminar
+                        a.btn.btn-sm.btn-info.btn-lg.btn-block(href="/publishes/editar/"+publish._id) Editar

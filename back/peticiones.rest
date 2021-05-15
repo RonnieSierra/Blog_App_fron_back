@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/publishes
+
+###
+POST http://localhost:3000/api/publishes
+Content-Type: application/json
+
+{
+    "titulo" : "Mitologia griega",
+    "post" : "La mitología griega es el conjunto de mitos y leyendas pertenecientes a la cultura de la Antigua Grecia, que tratan de sus dioses y héroes, la naturaleza del mundo, los orígenes y el significado de sus propios cultos y prácticas rituales. Formaban parte de la religión de la Antigua Grecia, que tenía como objeto de culto básicamente a los dioses olímpicos. Los investigadores modernos recurren a los mitos y los estudian en un intento por arrojar luz sobre las instituciones religiosas y políticas de la antigua Grecia y su civilización, así como para entender mejor la naturaleza de la propia creación de los mitos.",
+    "activo": true,
+    "numero": 1
+}
+
+###
+PUT http://localhost:3000/api/publishes/60892ea8377918481845557d
+Content-Type: application/json
+
+{
+    
+    "titulo" : "Mitologia griega",
+    "numero" : 1,
+    "activo" : true,
+    "post" : "La mitología griega es el conjunto de mitos y leyendas pertenecientes a la cultura de la Antigua Grecia, que tratan de sus dioses y héroes, la naturaleza del mundo, los orígenes y el significado de sus propios cultos y prácticas rituales. Formaban parte de la religión de la Antigua Grecia, que tenía como objeto de culto básicamente a los dioses olímpicos. Los investigadores modernos recurren a los mitos y los estudian en un intento por arrojar luz sobre las instituciones religiosas y políticas de la antigua Grecia y su civilización, así como para entender mejor la naturaleza de la propia creación de los mitos.1​ "
+}
+
+
+###
+DELETE  http://localhost:3000/api/publishes/6089813e0bfad5064448b937
